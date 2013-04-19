@@ -106,7 +106,7 @@ function runProgressBar(bac){
         }
         if ( (bac >= .08) && (bac < .30) ) {
                 $("#progress-bar-under").css("width", bacLeftPct);
-                document.getElementById("bac-left-under").innerHTML="You are over .08.";
+                document.getElementById("bac-left-under").innerHTML="You are over .08";
                 
                 var green = ((.08/bacTop) * 100) + "%";
                 var red = (( (bac - .08) / bacTop) * 100) + "%";
