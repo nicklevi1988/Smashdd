@@ -99,12 +99,12 @@ function runProgressBar(bac){
         var bacTop = .30;
         var bacLeft = ((bac / .08)*100);
         var bacLeftPct = bacLeft.toFixed(2) + "%";
-        
+        alert(bac);
         if (bac < .08){
                 $("#progress-bar-under").css("width", bacLeftPct);
                 document.getElementById("bac-left-under").innerHTML="Progress towards .08 (" + bacLeftPct + ")";
         }
-        if ( (bac >= .08) && (bac < .30) ) {
+        else if ( (bac >= .08) && (bac < .30) ) {
                 $("#progress-bar-under").css("width", bacLeftPct);
                 document.getElementById("bac-left-under").innerHTML="You are over .08";
                 
