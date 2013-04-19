@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Smashdd</title>
+    
+    <meta content="width=device-width, minimum-scale=1, maximum-scale=1" name="viewport">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="img/favicon.png">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bac-calc.js"></script>
+
+    <!-- start Mixpanel --><script type="text/javascript">(function(e,b){if(!b.__SV){var a,f,i,g;window.mixpanel=b;a=e.createElement("script");a.type="text/javascript";a.async=!0;a.src=("https:"===e.location.protocol?"https:":"http:")+'//cdn.mxpnl.com/libs/mixpanel-2.2.min.js';f=e.getElementsByTagName("script")[0];f.parentNode.insertBefore(a,f);b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==
+typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.track_charge people.clear_charges people.delete_user".split(" ");for(g=0;g<i.length;g++)f(c,i[g]);
+b._i.push([a,e,d])};b.__SV=1.2}})(document,window.mixpanel||[]);
+mixpanel.init("32c900d401677147ea813acef677d1c8");</script><!-- end Mixpanel -->
+
+</head>
+
+<body>
+
+    <div class="navbar navbar-inverse">
+        <div class="navbar-inner">
+            <div class="container">
+                <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="brand" href="/">Smashdd</a>
+                <div class="nav-collapse collapse">
+                    <ul class="nav">
+                        <li><a class="#" href="/">Calculator</a></li>
+                        <li><a class="#disclaimer" href="#disclaimerModal" data-toggle="modal">Disclaimer</a></li>
+                        <li><a class="#contact" href="mailto:info@smashdd.com">Contact</a></li>
+                    </ul>
+                </div>
+                <img class="drink-line pull-right hidden-phone" src="img/drinkline.png">
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row span6 calculator">
+            <div id="panel-1" class="panel">
+                <h3>How Smashdd are you?</h3>
+                <p>A simple way to find out how drunk you are.</p>
+                <div class="row gender">
+                    <div id="male" class="pull-left"></div>
+                    <div id="female" class="pull-left"></div>    
+                </div>
+            </div>
+            <div id="panel-2" class="panel">
+                <fieldset>
+                    <label for="weight">Weight</label>
+                        <input class="span2 inline" type="number" id="weight" placeholder="Weight">
+                        <label class="radio inline">
+                            <input type="radio" name="weight-radio" id="lbs" value="lbs" checked>LBS
+                        </label>
+                        <label class="radio inline">
+                            <input type="radio" name="weight-radio" id="kg" value="kg">KG
+                        </label>
+                        <div id="weight-val" class="validate"></div>
+                    <label for="alcoholPct">What Did You Drink?</label>
+                    <select id="alcoholPct" placeholder="Alcohol Percentage">
+                            <option value=".7">Airline Miniature Bottle</option>
+                            <option value=".81">Ale (pint)</option>
+                            <option value=".54">Beer (12 oz)</option>
+                            <option value=".72">Beer (16 oz)</option>
+                            <option value=".44">Beer - Light (12 oz)</option>
+                            <option value=".59">Beer - Light (16 oz)</option>
+                            <option value=".28">Beer (reduced alcohol)</option>
+                            <option value=".9">Brandy (snifter)</option>
+                            <option value="1">Dry Martini</option>
+                            <option value=".645">Gin (1.5 oz)</option>
+                            <option value=".6">Highball</option>
+                            <option value=".71">Malt Liquor (12 oz)</option>
+                            <option value="1.15">Manhattan</option>
+                            <option value="1.1">Porter (pint)</option>
+                            <option value=".645">Rum (1.5 oz)</option>
+                            <option value=".8">Sake (1.5 oz)</option>
+                            <option value="1.3">Stout (pint)</option>
+                            <option value=".645">Tequila (1.5 oz)</option>
+                            <option value=".645">Vodka (1.5 oz)</option>
+                            <option value=".645">Whiskey (1.5 oz)</option>
+                            <option value=".55">Wine (half a large glass)</option>
+                    </select>
+                    <label for="quantity">How Many Did You Have?</label>
+                        <select id="quantity" placeholder="Quantity">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>                
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>                 
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option> 
+                        </select>
+                    
+                    <label for="hours">How Many Hours Ago Did You Start?</label>
+                        <select id="hours">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>                
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>                 
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option> 
+                        </select>
+                    </fieldset>
+                <br/>
+                <input class="btn btn-primary" id="submit" type="submit" onclick="calculateBAC()">
+            </div>
+            <div id="panel-3" class="panel">
+                <div id="result"></div>
+                <br/>
+                <div id="result-num"></div>
+                <br />
+                Remember, the legal limit to drive is under .08. Get Smashdd responsibly.
+                <br />
+                <br/>
+                <a class="btn btn-primary" href="/">Try again?</a>
+                <br/>
+                <br/>
+                <span style="color:#999;">Disclaimer: Smashdd.com is for entertainment purposes only. Smashdd.com does not endorse excessive consumption of alcohol. You should never drink and drive. Blood Alcohol Calculations are a guide only.</span>
+                <span style="color:red">Never drink and drive.</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="footer hidden-phone">
+    <div class="container">
+        <a href="https://mixpanel.com/f/partner"><img src="http://cdn.mxpnl.com/site_media/images/partner/badge_light.png" alt="Mobile Analytics" id="mixpanel-image" /></a>
+    </div>
+</div>
+
+<div id="disclaimerModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+        <h3 id="myModalLabel">Disclaimer</h3>
+    </div>
+    <div class="modal-body">
+        <p>Disclaimer: Smashdd.com is for entertainment purposes only. Smashdd.com does not endorse excessive consumption of alcohol. You should never drink and drive. Blood Alcohol Calculations are a guide only.</p>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" data-dismiss="modal" aria-hidden="true">Close</button>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+       $(".gender div").click(function(){
+            $(".gender div").removeClass("active");
+            $(this).addClass("active");
+       });
+       
+       $("#disclaimerModal").click(function(){
+            $('#disclaimerModal').modal(show);
+       });
+       
+       $('#submit').click(function(){
+            mixpanel.track('Form Submit');
+       });
+       
+       $(".gender div").click(function(){
+            $("#panel-1").hide();
+            $("#panel-2").show();
+        });
+    });
+</script>
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-34562878-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+</body>
+</html>
