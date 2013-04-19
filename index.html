@@ -123,18 +123,37 @@ mixpanel.init("32c900d401677147ea813acef677d1c8");</script><!-- end Mixpanel -->
                 <input class="btn btn-primary" id="submit" type="submit" onclick="calculateBAC()">
             </div>
             <div id="panel-3" class="panel">
-                <div id="result"></div>
-                <br/>
-                <div id="result-num"></div>
-                <br />
-                Remember, the legal limit to drive is under .08. Get Smashdd responsibly.
-                <br />
-                <br/>
-                <a class="btn btn-primary" href="/">Try again?</a>
-                <br/>
-                <br/>
-                <span style="color:#999;">Disclaimer: Smashdd.com is for entertainment purposes only. Smashdd.com does not endorse excessive consumption of alcohol. You should never drink and drive. Blood Alcohol Calculations are a guide only.</span>
-                <span style="color:red">Never drink and drive.</span>
+                <div class="result-container">
+                    <div id="result"></div>
+                    <br/>
+                    <div id="result-num"></div>
+                    <br />
+                    Remember, the legal limit to drive is under .08. Get Smashdd responsibly.
+                    <br />
+                    <br/>
+                    <a class="btn btn-primary" href="/">Try again?</a>
+                    <br/>
+                    <br/>
+                    <hr>
+                    <h3>Statistics</h3>
+                    <div>
+                        <span id="bac-left-under"></span>
+                        <div class="progress progress-striped progress-danger">
+                            <div class="bar" id="progress-bar-under"></div>
+                        </div>
+                        <div id="statistics-bac-over">
+                            <span id="bac-left-over"></span>
+                            <div class="progress progress-striped">
+                                <div class="bar bar-success" id="progress-bar-over-green"></div>
+                                <div class="bar bar-warning" id="progress-bar-over-red"></div>
+                                <div class="bar bar-danger" id="progress-bar-over-danger"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr />
+                    <span style="color:#999;">Disclaimer: Smashdd.com is for entertainment purposes only. Smashdd.com does not endorse excessive consumption of alcohol. You should never drink and drive. Blood Alcohol Calculations are a guide only.</span>
+                    <span style="color:red">Never drink and drive.</span>
+                </div>
             </div>
         </div>
     </div>

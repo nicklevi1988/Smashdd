@@ -91,5 +91,39 @@ function calculateBAC(){
                         document.getElementById("result").innerHTML="Your Blood Alcohol Content is .00. You are fine.";
                         document.getElementById("result-num").innerHTML=".00";
                 }
+                runProgressBar(bac);
+        }
+};
+
+function runProgressBar(bac){
+        var bacTop = .30;
+        var bacLeft = ((bac / .08)*100);
+        var bacLeftPct = bacLeft.toFixed(2) + "%";
+        
+        if (bac < .08){
+                $("#progress-bar-under").css("width", bacLeftPct);
+                document.getElementById("bac-left-under").innerHTML="Progress towards .08 (" + bacLeftPct + ")";
+        }
+        if ( (bac >= .08) && (bac < .30) ) {
+                $("#progress-bar-under").css("width", bacLeftPct);
+                document.getElementById("bac-left-under").innerHTML="You are over .08.";
+                
+                var green = ((.08/bacTop) * 100) + "%";
+                var red = (( (bac - .08) / bacTop) * 100) + "%";
+                
+                var bacOver = ((bac/bacTop) * 100);
+                
+                $("#statistics-bac-over").show();
+                $("#progress-bar-over-green").css("width", green);
+                $("#progress-bar-over-red").css("width", red);
+                document.getElementById("bac-left-over").innerHTML="Progress toward " + bacTop.toFixed(2) + " (" + bacOver.toFixed(2) + "%)";
+        }
+        else{
+                $("#progress-bar-under").css("width", bacLeftPct);
+                document.getElementById("bac-left-under").innerHTML="You are over .08.";
+                
+                $("#statistics-bac-over").show();
+                $("#progress-bar-over-danger").css("width", "100%");
+                document.getElementById("bac-left-over").innerHTML="You are also over " + bacTop.toFixed(2) + " and should probably seek assistance.";                
         }
 };
